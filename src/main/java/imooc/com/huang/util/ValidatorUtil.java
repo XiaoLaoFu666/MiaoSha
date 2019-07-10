@@ -1,0 +1,25 @@
+package imooc.com.huang.util;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.apache.commons.lang3.StringUtils;
+
+
+public class ValidatorUtil {
+
+	private static final Pattern mobile_pattern = Pattern.compile("1\\d{10}");
+	
+	public static boolean isMobile(String src) {
+		if(StringUtils.isEmpty(src)) {
+			return false;
+		}
+		Matcher m = mobile_pattern.matcher(src);
+		return m.matches();
+	}
+	
+//	public static void main(String arg[]) {
+//		System.out.println(isMobile("18923455432"));
+//		System.out.println(isMobile("23131345678"));
+//	}
+}
